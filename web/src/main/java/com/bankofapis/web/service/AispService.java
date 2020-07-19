@@ -15,6 +15,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpStatusCodeException;
 
 import java.util.Arrays;
+import java.util.List;
 
 import static com.bankofapis.core.model.common.Constants.CLIENT_CRED_GRANT_TYPE_VALUE;
 import static com.bankofapis.core.model.common.Constants.SCOPE_ACCOUNT_VALUE;
@@ -166,5 +167,26 @@ public class AispService {
         }
     }
 
+    public OBReadDataResponse<OBReadAccountList> getAccountDetails() {
 
+        try {
+        	
+        	
+        	
+        	OBReadDataResponse<OBReadAccountList> accountList = aispRemote.getAccountResponse(HttpRequestContext.get());
+        	List<OBReadAccountInformation> listAccountInfo = accountList.getData().getAccount();
+        	for(OBReadAccountInformation accInfo:listAccountInfo) {
+        		List<OBReadBalance> balanceInfoList = this.getBalanceById(accInfo.getAccountId()).getData().getAccount();
+        		accInfo.setBalances(balanceInfoList);
+        		List<OBReadStandingOrder> standingOrderList = this.getStandingOrdersById(accInfo.getAccountId()).getData().getStandingOrderList();
+        		accInfo.setStandingOrderList(standingOrderList);
+        	}
+            return accountList;
+
+        } catch (HttpClientErrorException ex) {
+            logger.error(ex.getResponseBodyAsString(), ex);
+            throw ex;
+        }
+
+    }
 }

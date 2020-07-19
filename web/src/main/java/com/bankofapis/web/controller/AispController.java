@@ -40,7 +40,7 @@ public class AispController {
 
     @GetMapping(value = ACCOUNT_LIST_ENDPOINT)
     public OBReadDataResponse<OBReadAccountList> getAccounts() {
-        return aispService.getAccountResponse();
+        return aispService.getAccountDetails();
     }
 
     @GetMapping(value = ACCOUNT_ID_ENDPOINT)

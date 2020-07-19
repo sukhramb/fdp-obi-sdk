@@ -8,10 +8,10 @@ client:
   id: RgmLcqWcWH_hZRYynUmRNFuewUXWd6CkKX49b-BcXr8=
   secret: SeHH5Jfg7q1IE3uhmgkX9yHnRJxp9kO4aM5ew-XFg8k=
   redirectUri: http://localhost:4001/redirecting
-  financialId: 932129508578
+  financialId: 0015800000jfwB4AAI
   state: ABC
   authorizationUsername: sukhramb
-  authorizationAccount: 932129508578
+  authorizationAccount: 50000012345601
   tokenUrl: https://ob.rbs.useinfinite.io/token
   initRunning: true
 

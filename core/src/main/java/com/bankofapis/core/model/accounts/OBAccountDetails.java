@@ -7,7 +7,7 @@ import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 
-public class OBReadAccountInformation {
+public class OBAccountDetails {
 
     @JsonProperty("AccountId")
     private String accountId;
@@ -33,10 +33,7 @@ public class OBReadAccountInformation {
     @JsonProperty("balances")
     private List<OBReadBalance> balances = null;
     
-    @JsonProperty("StandingOrder")
-    private List<OBReadStandingOrder> standingOrderList = null;
-
-  
+    
     public String getAccountId() {
         return accountId;
     }
@@ -100,13 +97,5 @@ public class OBReadAccountInformation {
 	public void setBalances(List<OBReadBalance> balances) {
 		this.balances = balances;
 	}
-	
-	 public List<OBReadStandingOrder> getStandingOrderList() {
-	        return standingOrderList;
-    }
-
-    public void setStandingOrderList(List<OBReadStandingOrder> standingOrderList) {
-        this.standingOrderList = standingOrderList;
-    }
-
+    
 }

@@ -124,4 +124,15 @@ public class AispRemote {
                 }, accountId).getBody();
 
     }
+    
+    public OBReadDataResponse<OBReadAccountList> getAccountDetails(HttpRequestHeader httpRequestHeader) {
+
+        return securedRestTemplate.exchange(
+                apiUtils.getUri(ACCOUNT_LIST_ENDPOINT),
+                HttpMethod.GET,
+                apiUtils.createRequest(null, httpRequestHeader),
+                new ParameterizedTypeReference<OBReadDataResponse<OBReadAccountList>>() {
+                }).getBody();
+
+    }
 }
