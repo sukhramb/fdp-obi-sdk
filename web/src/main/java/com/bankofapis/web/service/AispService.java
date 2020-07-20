@@ -66,6 +66,7 @@ public class AispService {
             obReadDataDomesticConsent.getData().setPermissions(Arrays.asList(aispPermissions));
             OBReadDomesticConsentResponse obReadDomesticConsentResponse =
                     aispRemote.createAispConsent(obReadDataDomesticConsent, HttpRequestContext.get());
+            logger.info("*******Consent Created: " + obReadDomesticConsentResponse.getData().getConsentId());
 
             return  createAuthorizeUri(obReadDomesticConsentResponse.getData().getConsentId());
         } catch (HttpStatusCodeException ex) {
@@ -170,8 +171,6 @@ public class AispService {
     public OBReadDataResponse<OBReadAccountList> getAccountDetails() {
 
         try {
-        	
-        	
         	
         	OBReadDataResponse<OBReadAccountList> accountList = aispRemote.getAccountResponse(HttpRequestContext.get());
         	List<OBReadAccountInformation> listAccountInfo = accountList.getData().getAccount();

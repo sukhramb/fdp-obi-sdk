@@ -23,6 +23,15 @@ public class OBReadAccountInformation {
 
     @JsonProperty("Description")
     private String description;
+    
+    @JsonProperty("brand")
+    private String brand;
+    
+    @JsonProperty("termInMonths")
+    private String termInMonths;
+    
+    @JsonProperty("rateOfInterest")
+    private String rateOfInterest;
 
     @JsonProperty("Nickname")
     private String nickname;
@@ -76,8 +85,32 @@ public class OBReadAccountInformation {
     public void setDescription(String description) {
         this.description = description;
     }
+    
+    public String getBrand() {
+		return brand;
+	}
 
-    public String getNickname() {
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public String getTermInMonths() {
+		return termInMonths;
+	}
+
+	public void setTermInMonths(String termInMonths) {
+		this.termInMonths = termInMonths;
+	}
+
+	public String getRateOfInterest() {
+		return rateOfInterest;
+	}
+
+	public void setRateOfInterest(String rateOfInterest) {
+		this.rateOfInterest = rateOfInterest;
+	}
+
+	public String getNickname() {
         return nickname;
     }
 
