@@ -7,7 +7,7 @@ log4j:
 client:
   id: Iu9d7bXCe6pY-m6PQ1usvvzLj7OK8kHZBBv2XfLmvkM=
   secret: g-1HkcGC2U5hDnE3bReyCLEH-T3lbRsDfaXAF6FFJqE=
-  redirectUri: http://localhost:4001/redirecting
+  redirectUri: http://localhost:8888/redirecting
   financialId: 0015800000jfwB4AAI
   state: ABC
   authorizationUsername: sukhramb
