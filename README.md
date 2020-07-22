@@ -11,10 +11,10 @@ FDP provides customer with tools / calculators that reccomend them to extend the
 
 Usage
 -----
-This is extension of Open Banking API SDK  https://github.com/HashApithon/openbanking-java-sdk. The extension adds few APIs for FDP.
+This is extension of Open Banking API SDK  https://github.com/HashApithon/openbanking-java-sdk. The APIs for FDP application were added as below:
 
-'/fdp/accounts' - Fetch all banking accounts for mullipple banks on open banking architecture.
-'/fdp/extend-payments' - Save requests for extension of payments
+* '/fdp/accounts' - Fetch all banking accounts for mullipple banks/brands on open banking architecture.
+* '/fdp/extend-payments' - Save requests for extension of payments
 
 ### Install
 
